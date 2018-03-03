@@ -1,1 +1,2 @@
-# PythonStudying
+# PyProgram
+Python code
