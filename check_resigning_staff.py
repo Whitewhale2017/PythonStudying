@@ -1,8 +1,8 @@
 import pyodbc
 import Check_str_in_table as jc
 
-constr = 'DRIVER={SQL Server};SERVER=192.168.150.245;DATABASE=ecology8;UID=sa;PWD=Ytx@123456'
-#constr='DRIVER={SQL Server};SERVER=localhost;DATABASE=ecology8;UID=sa;PWD=123456'
+#constr = 'DRIVER={SQL Server};SERVER=192.168.150.245;DATABASE=ecology8;UID=sa;PWD=Ytx@123456'
+constr='DRIVER={SQL Server};SERVER=localhost;DATABASE=ecology8;UID=sa;PWD=123456'
 try:
     conn = pyodbc.connect(constr)
 except Exception as e:
