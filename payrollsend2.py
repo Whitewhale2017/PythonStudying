@@ -16,10 +16,10 @@ from email.utils import parseaddr, formataddr
 
 from openpyxl import load_workbook
 
-EMAIL_HOST = 'mail.chyjr.com'
-EMAIL_PORT = 465
-EMAIL_HOST_USER = 'payrollsend@chyjr.com'
-EMAIL_HOST_PASSWORD = '1q2w3e4R'
+EMAIL_HOST = 'outlook.office365.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'yanchu1990@hotmail.com'
+EMAIL_HOST_PASSWORD = 'Ilove199011'
 
 
 def get_log_config():
@@ -122,7 +122,6 @@ def _format_float(obj):
         return '{:.2f}'.format(obj)
     else:
         return str(obj)
-
 
 def _format_percent(obj):
     if isinstance(obj, float) or isinstance(obj, int):
@@ -320,7 +319,7 @@ def send_stub(datas):
     for data in datas:
         server = None
         try:
-            server = smtplib.SMTP_SSL('mail.chyjr.com', 465)
+            server = smtplib.SMTP_SSL(EMAIL_HOST, EMAIL_PORT)#配置邮件服务器信息
             server.ehlo()
             server.login(EMAIL_HOST_USER, EMAIL_HOST_PASSWORD)
             try:
@@ -410,7 +409,7 @@ def main():
 
     insert_send_result(desc_full, res1)
     # 删除src目录内容
-    os.remove(full_name)
+    # os.remove(full_name)
     logger.info('... end %s' % func_name)
 
 
